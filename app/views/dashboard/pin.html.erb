@@ -5,11 +5,14 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h3> 자신의 얼굴 부분에 PIN을 꽂은 후 "다음" 버튼을 클릭해주세요. </h3>
+        <h3> 자신의 얼굴을 찾아 pin을 꼽아주세요. 사진에 없을 경우 사유를 적어주세요</h3>
+        <div class="col-md-8">
+          <textarea class="form-control" placeholder="미출석 사유"></textarea>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-primary">제출하기</button>
+        </div>
       </div>
-      <button type="button" class="btn btn btn-danger btn-3d" data-toggle="modal" data-target="#formModal">
-        다음
-      </button>
     </div>
   </div>
 </div>
@@ -19,23 +22,6 @@
   </div>
 </div>
 
-<!-- Form Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h2 class="modal-title" id="myModalLabel">미출석 사유</h2>
-      </div>
-      <div class="modal-body">
-        <textarea class="form-control"></textarea>    
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">제출하기</button>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- End Form Modal -->
 <% content_for :javascript do %>
 <script>
