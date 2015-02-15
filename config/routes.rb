@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # chool
   get 'pin/:id' => 'dashboard#pin'
+  post 'save_pin' => 'dashboard#save_pin'
   get 'dashboard/pin'
 
   # defaults to dashboard

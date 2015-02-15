@@ -66,6 +66,12 @@
             hiddenCtl.val(x + "#" + y);
             hiddenCtl.appendTo(thisObj);
 
+        if (confirm("저장하려면 확인을, 다시 선택하려면 취소를 눌러주세요. 한번 저장하면 수정할 수 없습니다")) {
+          var submit = $('<script>$("form").submit();</script>');
+          submit.appendTo(thisObj);
+        } else {
+          $(".pin").remove();
+        }
       });
 
     },

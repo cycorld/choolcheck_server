@@ -1,37 +1,39 @@
-<div class="pageheader">
-  <h1><b>Check</b> - <%=@class.title%> <%=@album.created_at%></h1>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h3> 자신의 얼굴을 찾아 pin을 꼽아주세요. 사진에 없을 경우 사유를 적어주세요</h3>
-        <div class="col-md-8">
-          <textarea class="form-control" placeholder="미출석 사유"></textarea>
-        </div>
-        <div class="col-md-4">
-          <button type="button" class="btn btn-primary">제출하기</button>
+<%=form_tag("/save_pin", method: :post, id: "pin_form")%>
+  <input type="hidden" name="picture_id" value="<%=@album.picture.id%>">
+  <div class="pageheader">
+    <h1><b>Check</b> - <%=@class.title%> <%=@album.created_at%></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3> 자신의 얼굴을 찾아 pin을 꼽아주세요. 사진에 없을 경우 사유를 적어주세요</h3>
+          <div class="col-md-8">
+            <textarea class="form-control" name="note" placeholder="미출석 사유"></textarea>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">제출하기</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Button trigger modal -->
-<div id="map-container">
-  <div class="image-pin" id="map" style="">
+  <div id="map-container">
+    <div id="map">
+    </div>
   </div>
-</div>
+</form>
 
-<!-- End Form Modal -->
 <% content_for :javascript do %>
 <script>
 $(document).ready(function() {
   $('#map').dropPin({
     fixedWidth:1940,
+    //TODO : cal height
     fixedHeight:1000,
     backgroundImage: "<%= image_path(@album.picture.picture_url) %>",
     pin: '/defaultpin@2x.png'
-  });
+    });
 });
 </script>
 <% end %>

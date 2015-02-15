@@ -56,4 +56,23 @@ class DashboardController < ApplicationController
     @unchecked_albums = @class.unchecked_albums
     @album = Album.pick(@class, params[:current])
   end
+
+  def save_pin
+    # TODO : validate duplicate pin
+    # TODO : validate only my picture
+    pin = Check.new
+    pin.coordinate = params[:hiddenpin]
+    pin.note = params[:note]
+    pin.picture_id = params[:picture_id]
+    pin.user_id = current_user.id
+    if pin.coordinate.nil?
+      status = 2
+    else
+      status = 1
+    end
+    pin.status = status
+    pin.save
+    redirect_to :back
+    #render :text => "coord : #{params[:hiddenpin]}, album_id: #{params[:picture_id]}, note: #{params[:note]}"
+  end
 end
