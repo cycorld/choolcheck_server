@@ -1,5 +1,5 @@
 class CheckController < ApplicationController
-  def checkers
+  def choolers
   end
 
   def dashboard
