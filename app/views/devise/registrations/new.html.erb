@@ -9,27 +9,45 @@
         </div>
         <div class="panel-body">
           <%= devise_error_messages! %>
-          <p>당신의 이메일 주소로 로그인해주세요.</p>
+          <p>아래 정보를 모두 기입해주세요.</p>
             <%=form_tag('/users', method: :post, class: "form-horizontal")%>
             <div class="form-group">
               <div class="col-md-12">
-                <input type="email" class="form-control" name="user[email]" id="email" placeholder="Email" autofocus="true">
+                <input type="email" class="form-control" name="user[email]" id="email" placeholder="Email" autofocus="true" required>
                 <i class="fa fa-user"></i>
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-12">
-                <input type="password" class="form-control" name="user[password]" id="password" placeholder="Password">
+                <input type="password" class="form-control" name="user[password]" id="password" placeholder="Password" required>
                 <i class="fa fa-lock"></i>
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-12">
-                <input type="password" class="form-control" name="user[password_confirmation]" id="password" placeholder="Password Confirmation">
+                <input type="password" class="form-control" name="user[password_confirmation]" id="password" placeholder="Password Confirmation" required>
                 <i class="fa fa-lock"></i>
                 <% if @validatable %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="user[name]" id="email" placeholder="이름" required>
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="user[dept]" id="email" placeholder="소속" required>
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="user[code]" id="email" placeholder="학번">
+                <i class="fa fa-user"></i>
               </div>
             </div>
             <div class="form-group">
