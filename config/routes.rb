@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'chool/pin'
+
   get 'class/index'
 
   get 'class/new'
