@@ -25,4 +25,8 @@ class Album < ActiveRecord::Base
     end
     albums
   end
+
+  def picture
+    pictures.first
+  end
 end
