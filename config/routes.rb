@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  # temp upload pictures
   get 'picture/new'
+  post 'picture/create'
 
   devise_for :users
   # sample

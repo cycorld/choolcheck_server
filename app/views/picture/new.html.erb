@@ -1,2 +1,6 @@
-<h1>Picture#new</h1>
-<p>Find me in app/views/picture/new.html.erb</p>
+<h1>사진을 올리세요</h1>
+<%=form_tag("/picture/create", method: :post, multipart: true) %>
+<input type="text" name="klass_id" placeholder="class_id" value="<%=@klass_id%>"><br>
+<input type="file" name="file"><br>
+<input type="submit">
+</form>

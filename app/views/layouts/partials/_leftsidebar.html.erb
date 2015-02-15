@@ -60,6 +60,12 @@
       <li><a href="/classbook/<%=c.id%>"><%=c.title%></a></li>
     <% end %>
   </ul>
+  <h5 class="sidebar-header">임시로 사진올리기</h5>
+  <ul class="nav nav-pills nav-stacked">
+    <% @classes.each do |c| %>
+      <li><a href="/picture/new?klass_id=<%=c.id%>"><%=c.title%>에 업로드</a></li>
+    <% end %>
+  </ul>
   <% end %>
 </nav>
 
