@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-
+    @classes = Classes.all
   end
 
   def blank_page

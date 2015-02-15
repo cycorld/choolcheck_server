@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  before_action :authenticate_user!
 
   # sample
   def index
@@ -11,8 +12,37 @@ class DashboardController < ApplicationController
   def new
   end
 
+  def create
+    c = Classes.new
+    c.title = params[:class_name]
+    c.description = params[:class_desc]
+    c.admin = [current_user.id]
+    if c.save
+      redirect_to "/classbook/#{c.id}"
+    else
+      # TODO : exections in Model
+      flash[:notice] = "something wrong"
+      redirect_to "/create"
+    end
+  end
+
+  def add_chooler
+    # user update or create
+    user = User.find_or_create(params)
+    # classbook add or none
+    Classbook.find_or_link(
+      params[:class_id],
+      user,
+      current_user
+    )
+    redirect_to :back
+  end
+
   # check
   def choolers
+    # TODO : need to order by name
+    @choolers = Classbook.where(class_id: params[:class_id]).reverse
+    @class_id = params[:class_id]
   end
 
   def daily
