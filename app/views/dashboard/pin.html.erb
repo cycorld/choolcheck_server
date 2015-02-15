@@ -14,7 +14,9 @@
   </div>
 </div>
 <!-- Button trigger modal -->
-<div class="image-pin" id="map">
+<div id="map-container">
+  <div class="image-pin" id="map" style="">
+  </div>
 </div>
 
 <!-- Form Modal -->
@@ -40,6 +42,7 @@
 $(document).ready(function() {
   $('#map').dropPin({
     fixedWidth:1940,
+    fixedHeight:1000,
     backgroundImage: "<%= image_path(@album.picture.picture_url) %>",
     pin: '/defaultpin@2x.png'
   });

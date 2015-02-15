@@ -1,5 +1,9 @@
+#map-container {
+  overflow: auto;
+}
 #map,#map2 {
     position: relative;
+    overflow: auto;
 }
 #map img#mapclick,#map2 img#mapclick{
   position: absolute;
