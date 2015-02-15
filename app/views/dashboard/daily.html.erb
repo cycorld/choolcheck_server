@@ -1,1 +1,129 @@
-데일리
+<div class="pageheader">
+    <h1><b>[Checker] 날짜별 출석체크</b> - [클래스명] [수업중1차] [15년 02월 14일 AM15:31] </h1>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li><a href="/">Dashboard</a>
+            </li>
+            <li>UI Elements</li>
+            <li class="active">Panels</li>
+        </ol>
+    </div>
+</div>
+
+<!-- 슬라이더 부분 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="<%= image_path('s1.jpg') %>" alt="1차" width="100%">
+      <div class="carousel-caption">
+        수업전 1차
+      </div>
+    </div>
+    <div class="item">
+      <img src="<%= image_path('s2.jpg') %>" alt="2차" width="100%">
+      <div class="carousel-caption">
+        수업중 2차
+      </div>
+    </div>
+    <div class="item">
+      <img src="<%= image_path('s3.jpg') %>" alt="3차" width="100%">
+      <div class="carousel-caption">
+        수업후 3차
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<div class="col-md-12">
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">[출석현황]-2015년 02월 05일</h3>
+        <div class="actions pull-right">
+            <i class="fa fa-chevron-down"></i>
+            <i class="fa fa-times"></i>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>이름</th>
+              <th>출석</th>
+              <th>사유</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>최용철</td>
+              <td>
+	              <i class="fa fa-check-circle"></i>
+	              <i class="fa fa-check-circle"></i>
+	              <i class="fa fa-check-circle"></i>
+              </td>
+              <td>
+				<ul>
+             		<li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
+         			<li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
+         			<li>3차 : 도망갔습니다.</li>
+         		</ul>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>강정모</td>
+              <td>
+	              <i class="fa fa-check-circle"></i>
+	              <i class="fa fa-check-circle"></i>
+	              <i class="fa fa-circle-thin"></i>
+              </td>
+              <td>
+				<ul>
+             		<li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
+         			<li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
+         			<li>3차 : 도망갔습니다.</li>
+         		</ul>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>임광</td>
+              <td>
+	              <i class="fa fa-check-circle"></i>
+	              <i class="fa fa-circle-thin"></i>
+	              <i class="fa fa-circle-thin"></i>
+              </td>
+              <td>
+				<ul>
+             		<li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
+         			<li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
+         			<li>3차 : 도망갔습니다.</li>
+         		</ul>
+              </td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
