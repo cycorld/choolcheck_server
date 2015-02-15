@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'class/index'
+
+  get 'class/new'
+
   get 'home/index'
 
   devise_for :users
