@@ -34,6 +34,17 @@ $(document).ready(function() {
     backgroundImage: "<%= image_path(@album.picture.picture_url) %>",
     pin: '/defaultpin@2x.png'
     });
+/*
+  $('#map').dropPin('showPin',{
+    fixedWidth:1940,
+    //TODO : cal height
+    fixedHeight:1000,
+    backgroundImage: "<%= image_path(@album.picture.picture_url) %>",
+    pin: '/defaultpin@2x.png'
+    pinX: 10,
+    pinY: 10
+  });
+*/
 });
 </script>
 <% end %>
