@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215075219) do
+ActiveRecord::Schema.define(version: 20150215101550) do
 
   create_table "albums", force: true do |t|
-    t.integer  "class_id"
+    t.integer  "klass_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 20150215075219) do
   end
 
   create_table "classbooks", force: true do |t|
-    t.integer  "class_id"
+    t.integer  "klass_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "classes", force: true do |t|
+  create_table "klasses", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "admin"

@@ -1,7 +1,7 @@
 class CreateAlbums < ActiveRecord::Migration
   def change
     create_table :albums do |t|
-      t.integer :class_id
+      t.integer :klass_id
 
       t.timestamps
     end

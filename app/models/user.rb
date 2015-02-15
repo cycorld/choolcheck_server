@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :classbooks
+  has_many :klasses, through: :classbooks
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -1,7 +1,7 @@
 class CreateClassbooks < ActiveRecord::Migration
   def change
     create_table :classbooks do |t|
-      t.integer :class_id
+      t.integer :klass_id
       t.integer :user_id
 
       t.timestamps

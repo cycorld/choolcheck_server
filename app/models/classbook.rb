@@ -1,15 +1,16 @@
 class Classbook < ActiveRecord::Base
   belongs_to :user
+  belongs_to :klass
 
   def self.find_or_link class_id, user, admin
     # valid check
     return false if user.id.nil?
-    c = Classes.find(class_id)
+    c = Klass.find(class_id)
     if c.admin.include? admin.id
-      link = self.where(class_id: class_id, user_id: user.id).first
+      link = self.where(klass_id: class_id, user_id: user.id).first
       if link.nil?
         self.create(
-          class_id: class_id,
+          klass_id: class_id,
           user_id: user.id
         )
       end

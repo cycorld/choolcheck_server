@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_classes
 
   # sample
   def index
@@ -13,7 +14,7 @@ class DashboardController < ApplicationController
   end
 
   def create
-    c = Classes.new
+    c = Klass.new
     c.title = params[:class_name]
     c.description = params[:class_desc]
     c.admin = [current_user.id]
@@ -41,7 +42,7 @@ class DashboardController < ApplicationController
   # check
   def choolers
     # TODO : need to order by name
-    @choolers = Classbook.where(class_id: params[:class_id]).reverse
+    @choolers = Classbook.where(klass_id: params[:class_id]).reverse
     @class_id = params[:class_id]
   end
 

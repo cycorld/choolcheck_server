@@ -4,5 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+
+  end
+  
+  private
+  def load_classes
+    @classes = Klass.all
   end
 end
