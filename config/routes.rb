@@ -1,19 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'check/checkers'
-
-  get 'check/dashboard'
-
-  get 'chool/pin'
-
-  get 'class/index'
-
-  get 'class/new'
-
-  get 'home/index'
-
   devise_for :users
   get 'dashboard/index'
+  get 'dashboard/notice'
+  get 'dashboard/new'
+  get 'dashboard/choolers'
+  get 'dashboard/daily'
+  get 'dashboard/pin'
 
   # defaults to dashboard
   root "pages#index"
