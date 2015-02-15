@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'check/checkers'
+
+  get 'check/dashboard'
+
   get 'chool/pin'
 
   get 'class/index'
