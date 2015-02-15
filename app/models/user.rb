@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :classbooks
   has_many :klasses, through: :classbooks
+  has_many :albums, through: :klasses
+  has_many :pictures, through: :albums
+  has_many :checks
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

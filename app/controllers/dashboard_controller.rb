@@ -53,8 +53,9 @@ class DashboardController < ApplicationController
   def pin
     @class = Klass.find(params[:id])
     @albums = @class.albums
-    @unchecked_albums = @class.unchecked_albums
-    @album = Album.pick(@class, params[:current])
+    @unchecked_albums = @class.unchecked_albums current_user
+    @album = Album.pick(@class, params[:current], current_user.id)
+    redirect_to '/dashboard/daily' if @album.nil?
   end
 
   def save_pin
