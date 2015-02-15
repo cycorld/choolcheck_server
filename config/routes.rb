@@ -6,12 +6,12 @@ Rails.application.routes.draw do
 
   # class
   get 'dashboard/notice'
-  get 'dashboard/new'
+  get 'create' => 'dashboard#new'
   post 'dashboard/create'
   post 'dashboard/add_chooler'
 
   # check
-  get 'dashboard/choolers'
+  get 'classbook/(:class_id)' => 'dashboard#choolers'
   get 'dashboard/daily'
 
   # chool

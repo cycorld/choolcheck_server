@@ -14,18 +14,19 @@
         </div>
         <div class="panel-body">
           <%=form_tag('/dashboard/add_chooler', method: :post, class: "form-horizontal form-border", id: "add-chooler-form")%>
-            <div class="form-group">
+          <div class="form-group">
+            <input type="hidden" name="class_id" value="<%=@class_id%>">
               <div class="col-sm-2">
-                <input type="text" class="form-control" placeholder="이름">
+                <input type="text" class="form-control" name="name" placeholder="이름">
               </div>
               <div class="col-sm-2">
-                <input type="text" class="form-control" placeholder="소속">
+                <input type="text" class="form-control" name="dept" placeholder="소속">
               </div>
               <div class="col-sm-2">
-                <input type="text" class="form-control" placeholder="학번">
+                <input type="text" class="form-control" name="code" placeholder="학번">
               </div>
               <div class="col-sm-2">
-                <input type="text" class="form-control" placeholder="이메일">
+                <input type="text" class="form-control" name="email" placeholder="이메일">
               </div>
               <div class="col-sm-2">
                 <button type="submit" class="btn btn-primary">추가</button>
@@ -56,63 +57,17 @@
                 <th>학번</th>
                 <th>이메일</th>
                 <th>3.1</th>
-                <th>3.1</th>
-                <th>3.1</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.1</th>
-                <th>3.1</th>
-                <th>3.1</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
-                <th>3.3</th>
               </tr>
             </thead>
 
             <tbody>
-              <% 103.times do |i|%>
+              <% @choolers.each_with_index do |c, index|%>
                 <tr>
-                  <td><%=i+1%></td>
-                  <td>최용철<%=i%></td>
-                  <td>컴퓨터공학부</td>
-                  <td>2007-10927</td>
-                  <td>choi@likelion.net</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
-                  <td>ㅇㅇㅇ</td>
+                  <td><%=index+1%></td>
+                  <td><%=c.user.name%></td>
+                  <td><%=c.user.dept%></td>
+                  <td><%=c.user.code%></td>
+                  <td><%=c.user.email%></td>
                   <td>ㅇㅇㅇ</td>
                 </tr>
               <% end %>
