@@ -62,10 +62,33 @@
   </a>
 </div>
 
-                                    <div class="col-md-4">
-                                        <h4>Modal Form</h4>
-                                        <!-- Button trigger modal -->
-                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
-                                            Launch form modal
-                                        </button>
-                                    </div>
+<div class="col-md-4">
+    <!-- Button trigger modal -->
+
+    <button type="button" class="btn btn-success btn-3d">
+        출석등록
+    </button>
+
+    <button type="button" class="btn btn btn-danger btn-3d" data-toggle="modal" data-target="#formModal">
+        이의신청
+    </button>    
+
+
+    <!-- Form Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">미출석 사유</h2>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control"></textarea>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">제출하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Form Modal -->
