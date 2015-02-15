@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
 
+  def index
+
+  end
+
   def blank_page
        render :layout => "application"
   end

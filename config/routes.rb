@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
 
   # defaults to dashboard
-  root "home#index"
+  root "pages#index"
   
   # view routes
   get '/dashboard' => 'dashboard#index'
