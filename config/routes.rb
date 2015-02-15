@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   devise_for :users
   get 'dashboard/index'
 
   # defaults to dashboard
-  root :to => redirect('/dashboard')
+  root "home#index"
   
   # view routes
   get '/dashboard' => 'dashboard#index'
