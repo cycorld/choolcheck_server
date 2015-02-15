@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'dashboard/index'
 
   # class
+  get 'notice' => 'dashboard#notice'
+  # temp
   get 'dashboard/notice'
   get 'create' => 'dashboard#new'
   post 'dashboard/create'
