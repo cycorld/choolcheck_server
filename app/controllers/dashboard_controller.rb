@@ -51,5 +51,9 @@ class DashboardController < ApplicationController
 
   # chool
   def pin
+    @class = Klass.find(params[:id])
+    @albums = @class.albums
+    @unchecked_albums = @class.unchecked_albums
+    @album = Album.pick(@class, params[:current])
   end
 end

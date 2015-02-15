@@ -11,7 +11,5 @@
 //= require calendar/js/clndr
 //= require calendar/js/clndr-demo
 //= require messenger/js/underscore-min 
-
-
-
+//= require dropPin
 
