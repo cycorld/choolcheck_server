@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'picture/new'
+
   devise_for :users
   # sample
   get 'dashboard/index'
