@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/notice'
   get 'dashboard/new'
+  post 'dashboard/create'
   get 'dashboard/choolers'
   get 'dashboard/daily'
   get 'dashboard/pin'
