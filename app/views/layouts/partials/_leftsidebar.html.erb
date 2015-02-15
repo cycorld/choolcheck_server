@@ -54,7 +54,15 @@
     <li><a href="/dashboard/daily">[checker용] 내가 만든 방 디테일</a></li>
   </ul>
   <% if @classes %>
-  <h5 class="sidebar-header">클래스 리스트</h5>
+  <h5 class="sidebar-header">등록된 클래스 리스트</h5>
+  <ul class="nav nav-pills nav-stacked">
+    <% @classes.each do |c| %>
+      <li><a href="/pin/<%=c.id%>"><%=c.title%></a></li>
+    <% end %>
+  </ul>
+  <% end %>
+  <% if @classes %>
+  <h5 class="sidebar-header">내가 만든 클래스 리스트</h5>
   <ul class="nav nav-pills nav-stacked">
     <% @classes.each do |c| %>
       <li><a href="/classbook/<%=c.id%>"><%=c.title%></a></li>

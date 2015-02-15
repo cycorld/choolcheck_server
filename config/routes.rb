@@ -15,10 +15,11 @@ Rails.application.routes.draw do
   post 'dashboard/add_chooler'
 
   # check
-  get 'classbook/(:class_id)' => 'dashboard#choolers'
+  get 'classbook/:class_id' => 'dashboard#choolers'
   get 'dashboard/daily'
 
   # chool
+  get 'pin/:id' => 'dashboard#pin'
   get 'dashboard/pin'
 
   # defaults to dashboard

@@ -21,4 +21,6 @@
 # Ignore all workspaces.
 /db/workspace/*/
 
+/public/uploads
+
 .DS_Store
