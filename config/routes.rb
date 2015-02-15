@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # defaults to dashboard
+  root "pages#index"
+
   # temp upload pictures
   get 'picture/new'
   post 'picture/create'
@@ -25,9 +28,6 @@ Rails.application.routes.draw do
   post 'save_pin' => 'dashboard#save_pin'
   get 'dashboard/pin'
 
-  # defaults to dashboard
-  root "pages#index"
-  
   # view routes
   get '/dashboard' => 'dashboard#index'
 
