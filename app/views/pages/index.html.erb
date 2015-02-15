@@ -1,22 +1,4 @@
-
-<section id="main-content" class="animated fadeInUp">
-  <ul>
-    <li><a href="/dashboard/notice">[공통] 메인index</a></li>
-    <li><a href="/create">[공통] 새 클래스 만들기</a></li>
-    <li><a href="/dashboard/pin">[chooler용] 핀꼽기</a></li>
-    <li><a href="/dashboard/daily">[checker용] 내가 만든 방 디테일</a></li>
-    <li>
-      <ol>
-        <p>[checker용] 학생리스트</p>
-      <% @classes.each do |c| %>
-        <li><a href="/classbook/<%=c.id%>"><%=c.title%></a></li>
-      <% end %>
-      </ol>
-    </li>
-    <li><a href="/dashboard">sample!!</a></li>
-  </ul>
-</section>
-
+<!-- 메인 로그인 --> 
 <div class="login">
   <div class="col-md-6 col-md-offset-3">
       <div id="login-wrapper">
