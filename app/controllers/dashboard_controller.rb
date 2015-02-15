@@ -26,6 +26,10 @@ class DashboardController < ApplicationController
     end
   end
 
+  def add_chooler
+    redirect_to '/dashboard/choolers'
+  end
+
   # check
   def choolers
   end

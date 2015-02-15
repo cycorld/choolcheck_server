@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  # sample
   get 'dashboard/index'
+
+  # class
   get 'dashboard/notice'
   get 'dashboard/new'
   post 'dashboard/create'
+  post 'dashboard/add_chooler'
+
+  # check
   get 'dashboard/choolers'
   get 'dashboard/daily'
+
+  # chool
   get 'dashboard/pin'
 
   # defaults to dashboard
