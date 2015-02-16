@@ -22,8 +22,9 @@ class PictureController < ApplicationController
   end
 
   def signup
-    user = User.where(email: params[:email], password: params[:password]).take
-    unless user.nil?
+    ## TODO : 유저없을 때 처리 ㅋ
+    user = User.where(email: params[:email]).take
+    if user.valid_password? params[:password]
       user.token = SecureRandom.hex
       user.save
       render json: {code: 1, result: user.token}
@@ -33,8 +34,8 @@ class PictureController < ApplicationController
   end
 
   def call_myclass
-    user = User.where(email: params[:email], token: params[:token]).take
-    if user.nil?
+    user = User.where(email: params[:email]).take
+    unless user.valid_password? params[:password]
       render json: {code: 0, result: "Error"}
     else
       classes = Array.new
@@ -48,8 +49,8 @@ class PictureController < ApplicationController
   end
 
   def upload
-    user = User.where(email: params[:email], token: params[:token]).take
-    if user.nil?
+    user = User.where(email: params[:email]).take
+    unless user.valid_password? params[:password]
       render json: {code: 0, result: "Error"}
     else
       # just one shot!!!!!
