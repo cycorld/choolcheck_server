@@ -56,7 +56,9 @@
                 <th>소속</th>
                 <th>학번</th>
                 <th>이메일</th>
-                <th>3.1</th>
+                <% @class.days.each do |k, v| %>
+                  <th><%=k.month%>/<%=k.day%>(<%=k.strftime("%a")%>)</th>
+                <% end %>
               </tr>
             </thead>
 
@@ -68,7 +70,9 @@
                   <td><%=c.user.dept%></td>
                   <td><%=c.user.code%></td>
                   <td><%=c.user.email%></td>
-                  <td>ㅇㅇㅇ</td>
+                  <% @class.days.each do |k, v| %>
+                    <td>ㅇㅇㅇ</td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>

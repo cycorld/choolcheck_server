@@ -46,6 +46,7 @@ class DashboardController < ApplicationController
     # TODO : need to order by name
     @choolers = Classbook.where(klass_id: params[:class_id]).reverse
     @class_id = params[:class_id]
+    @class = Klass.find(@class_id)
   end
 
   def daily
