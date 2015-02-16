@@ -11,6 +11,6 @@ class Klass < ActiveRecord::Base
   end
 
   def days
-    return [1, 2]
+    albums.group_by{|a| a.created_at.beginning_of_day}
   end
 end

@@ -91,10 +91,10 @@
                 학생리스트
               </a>
             </li>
-            <% c.days.each do |d|%>
+            <% c.days.each do |k, v|%>
             <li>
-              <a href="/dashboard/daily"><i class="icon-calendar"></i>
-                2월15일 : 72%
+              <a href="/classbook/<%=c.id%>/<%=k.strftime("%Y%m%d")%>"><i class="icon-calendar"></i>
+                <%=k.month%>월 <%=k.day%>일 : 72%
               </a>
             </li>
             <% end %>
