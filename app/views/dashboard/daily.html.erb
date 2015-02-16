@@ -34,78 +34,26 @@
                         <th>미출석 사유</th>
                     </tr>
                 </thead>
-         
                 <tbody>
+                  <%=@class.users.uniq.each_with_index do |u, index|%>
                     <tr>
-                      <td>1</td>
-                      <td>최용철</td>
-                      <td>20150420</td>
+                      <td><%=index+1%></td>
+                      <td><%=u.name%></td>
+                      <td><%=u.code%></td>
                       <td>
                           <i class="fa fa-check-circle"></i>
                           <i class="fa fa-circle-thin"></i>
                           <i class="fa fa-circle-thin"></i>
                       </td>
                       <td>
-                        <ul>
+                        <ul>notes
                             <li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
                             <li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
                             <li>3차 : 도망갔습니다.</li>
                         </ul>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>최용철</td>
-                      <td>20150420</td>                      
-                      <td>
-                          <i class="fa fa-check-circle"></i>
-                          <i class="fa fa-circle-thin"></i>
-                          <i class="fa fa-check-circle"></i>
-                      </td>
-                      <td>
-                        <ul>
-                            <li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
-                            <li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
-                            <li>3차 : 도망갔습니다.</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>최용철</td>
-                      <td>20150420</td>
-                      <td>
-                          <i class="fa fa-check-circle"></i>
-                          <i class="fa fa-check-circle"></i>
-                          <i class="fa fa-check-circle"></i>
-                      </td>
-                      <td>
-                        <ul>
-                            <li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
-                            <li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
-                            <li>3차 : 도망갔습니다.</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>최용철</td>
-                      <td>20150420</td>                      
-                      <td>
-                          <i class="fa fa-check-circle"></i>
-                          <i class="fa fa-check-circle"></i>
-                          <i class="fa fa-check-circle"></i>
-                      </td>
-                      <td>
-                        <ul>
-                            <li>1차 : 제 얼굴이 씨가리콩만큼 나와서 체크가 안됩니다.</li>
-                            <li>2차 : 제 얼굴이 벼룩의 간만큼 나와서 체크가 안됩니다.</li>
-                            <li>3차 : 도망갔습니다.</li>
-                        </ul>
-                      </td>
-                    </tr>
-
-
+                  <% end %>
                 </tbody>
             </table>
 

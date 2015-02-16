@@ -47,6 +47,12 @@ class DashboardController < ApplicationController
   end
 
   def daily
+    @class = Klass.find(params[:class_id])
+    day = params[:YYYYMMDD] || ""
+    @date = DateTime.new(day[0..3].to_i, # 1987
+                         day[4..5].to_i, # 03 Mar
+                         day[6..7].to_i  # 03
+                        )
   end
 
   # chool
