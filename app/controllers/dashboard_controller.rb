@@ -62,7 +62,8 @@ class DashboardController < ApplicationController
     @albums = @class.albums
     @unchecked_albums = @class.unchecked_albums current_user
     @album = Album.pick(@class, params[:current], current_user.id)
-    redirect_to '/dashboard/daily' if @album.nil?
+    # TODO : 아직 찍힌게 없을 경우 보여줄 화면이 필요
+    redirect_to "/classbook/#{params[:id]}" if @album.nil?
   end
 
   def save_pin

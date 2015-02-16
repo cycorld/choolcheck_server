@@ -12,6 +12,6 @@
 .pin {
   height: auto;
   position: absolute;
-  width: 24px;
+  width: 16px;
   z-index: 2;
 }
