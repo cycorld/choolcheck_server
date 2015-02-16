@@ -2,6 +2,9 @@ class PagesController < ApplicationController
 
   def index
     @classes = Klass.all
+    if user_signed_in?
+      redirect_to '/notice'
+    end
   end
 
   def blank_page

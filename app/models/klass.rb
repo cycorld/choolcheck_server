@@ -9,4 +9,8 @@ class Klass < ActiveRecord::Base
   def unchecked_albums user_id
     Album.where(klass_id: self.id).unchecked_albums user_id
   end
+
+  def days
+    albums.group_by{|a| a.created_at.beginning_of_day}
+  end
 end

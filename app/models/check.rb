@@ -3,7 +3,7 @@ class Check < ActiveRecord::Base
   belongs_to :picture
 
   def self.checked_picture_ids user_id
-    where(user_id: user_id).map(&:user_id).uniq
+    self.where(user_id: user_id).map(&:picture_id).uniq
   end
 
   def self.unchecked_picture_ids user_id

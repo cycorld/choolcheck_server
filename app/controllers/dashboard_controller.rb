@@ -19,6 +19,8 @@ class DashboardController < ApplicationController
     c.description = params[:class_desc]
     c.admin = [current_user.id]
     if c.save
+      current_user.own_klasses << c.id
+      current_user.save!
       redirect_to "/classbook/#{c.id}"
     else
       # TODO : exections in Model
@@ -47,6 +49,13 @@ class DashboardController < ApplicationController
   end
 
   def daily
+    @class = Klass.find(params[:class_id])
+    day = params[:YYYYMMDD]
+    @date = DateTime.new(day[0..3].to_i, # 1987
+                         day[4..5].to_i, # 03 Mar
+                         day[6..7].to_i  # 03
+                        )
+    @albums = @class.albums
   end
 
   # chool
@@ -55,7 +64,8 @@ class DashboardController < ApplicationController
     @albums = @class.albums
     @unchecked_albums = @class.unchecked_albums current_user
     @album = Album.pick(@class, params[:current], current_user.id)
-    redirect_to '/dashboard/daily' if @album.nil?
+    # TODO : 아직 찍힌게 없을 경우 보여줄 화면이 필요
+    redirect_to "/classbook/#{params[:id]}" if @album.nil?
   end
 
   def save_pin

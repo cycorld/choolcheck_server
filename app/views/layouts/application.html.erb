@@ -52,6 +52,7 @@
      <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
      <%= javascript_include_tag 'application' %>
      <%= yield :javascript %>
+     <%= yield :javascript_for_header %>
 
 </body>
 </html>

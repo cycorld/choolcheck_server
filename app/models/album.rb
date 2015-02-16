@@ -1,6 +1,7 @@
 class Album < ActiveRecord::Base
   belongs_to :klass
   has_many :pictures
+  has_many :checks, through: :pictures
 
   def self.pick klass, album_id, user_id
     album = self.where(id: album_id).first
@@ -24,5 +25,9 @@ class Album < ActiveRecord::Base
       albums << Picture.find(pid).album
     end
     albums
+  end
+
+  def picture
+    pictures.first
   end
 end

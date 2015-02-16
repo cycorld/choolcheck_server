@@ -1,26 +1,39 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div id="login-wrapper">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            로그인하기
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= devise_error_messages! %>
+          <p>당신의 이메일 주소로 로그인해주세요.</p>
+            <%=form_tag('/users/sign_in', method: :post, class: "form-horizontal")%>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="email" class="form-control" name="user[email]" id="email" placeholder="Email" autofocus="true">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="password" class="form-control" name="user[password]" id="password" placeholder="Password">
+                <i class="fa fa-lock"></i>
+                <a href="/users/password/new" class="help-block">패스워드를 잊어버렸나요?</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary btn-block">로그인</button>
+                <hr />
+                <a href="/users/sign_up" class="btn btn-default btn-block">아직 가입하지 않으셨나요? [ 클릭 ]</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

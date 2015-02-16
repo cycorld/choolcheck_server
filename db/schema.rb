@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150215101550) do
     t.string   "name",                   default: "", null: false
     t.string   "dept"
     t.string   "code"
+    t.string   "own_klasses"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
