@@ -52,7 +52,7 @@
   <ul class="nav nav-pills nav-stacked">
     <li class="nav-dropdown <%= 'active open' if action?('notice') or action?('daily')%>">
       <a href="#">
-        <i class="fa fa fa-graduation-cap"></i> 내가 등록된 클래스
+        <font color="#fc6b94"><i class="fa fa fa-graduation-cap"></i> 등록된 클래스</font>
       </a>
       <% unless @classes.empty? %>
       <ul class="nav-sub">
@@ -81,8 +81,8 @@
 
     <li class="nav-dropdown <%= 'active open' if controller?('class')%>">
       <a href="#">
-        <i class="fa fa fa-graduation-cap"></i> 내가 개설한 클래스
-      </a>
+        <font color="#8fdaef"><i class="fa fa fa-graduation-cap"></i> 개설한 클래스
+      </a></font>
       <ul class="nav-sub">
       <% if @classes_created_by_me %>
         <% @classes_created_by_me.each do |c| %>
