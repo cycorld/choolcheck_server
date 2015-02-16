@@ -63,12 +63,14 @@
   <% a.pictures.each do |p|%>
       var pinData = {"markers": [
       <% p.checks.each do |c| %>
-      {
-        "id": <%=c.user.id%>,
-        "title": '<%=c.user.name%>',
-        "xcoord": <%=c.coordinate.split('#')[0].to_i - 8%>,
-        "ycoord": <%=c.coordinate.split('#')[1].to_i - 8%>
-      },
+        <% if c.status == 1 %>
+        {
+          "id": <%=c.user.id%>,
+          "title": '<%=c.user.name%>',
+          "xcoord": <%=c.coordinate.split('#')[0].to_i - 8%>,
+          "ycoord": <%=c.coordinate.split('#')[1].to_i - 8%>
+        },
+        <% end %>
       <% end %>
       ]};
     $("#map<%=index%>").dropPin('showPins',{

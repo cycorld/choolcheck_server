@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :pictures, through: :albums
   has_many :checks
 
+  serialize :own_klasses, Array
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -24,5 +26,9 @@ class User < ActiveRecord::Base
       # TODO : send email to new_user
     end
     return user
+  end
+
+  def created_klasses
+    Klass.where(id: own_klasses)
   end
 end

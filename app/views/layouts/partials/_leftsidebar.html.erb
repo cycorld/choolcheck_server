@@ -52,17 +52,27 @@
   <ul class="nav nav-pills nav-stacked">
     <li class="nav-dropdown <%= 'active open' if action?('notice') or action?('daily')%>">
       <a href="#">
-        <i class="fa fa fa-graduation-cap"></i> [ Chooler ] Class
+        <i class="fa fa fa-graduation-cap"></i> 내가 등록된 클래스
       </a>
-      <% if @classes %>
-        <ul class="nav-sub">
+      <% unless @classes.empty? %>
+      <ul class="nav-sub">
         <% @classes.each do |c| %>
           <li class="<%= 'active' if controller?('class') && action?('buttons') %>">
           <a href="/pin/<%=c.id%>"><i class="icon-calendar"></i>
             <%=c.title%>
           </a>
         </li>
-      <% end %>
+        <% end %>
+      </ul>
+      <ul class="nav nav-pills nav-stacked">
+      </ul>
+    <% else %>
+      <ul class="nav-sub">
+          <li class="<%= 'active' if controller?('class') && action?('buttons') %>">
+          <a href="#">
+            등록된 클래스가 없습니다
+          </a>
+        </li>
       </ul>
       <ul class="nav nav-pills nav-stacked">
       </ul>
@@ -71,16 +81,11 @@
 
     <li class="nav-dropdown <%= 'active open' if controller?('class')%>">
       <a href="#">
-        <i class="fa fa fa-graduation-cap"></i> [ Checker ] Class
+        <i class="fa fa fa-graduation-cap"></i> 내가 개설한 클래스
       </a>
       <ul class="nav-sub">
-        <li>
-          <a href="/create"><i class="icon-calendar"></i>
-            새 클래스 만들기
-          </a>
-        </li>
-      <% if @classes %>
-        <% @classes.each do |c| %>
+      <% if @classes_created_by_me %>
+        <% @classes_created_by_me.each do |c| %>
         <li class="nav-dropdown">
           <a href="#" title="Level 2.3">
             <i class="fa fa-fw fa-folder-open"></i> <%=c.title%>
@@ -101,6 +106,11 @@
           </ul>
         </li>
         <% end %>
+        <li>
+          <a href="/create"><i class="icon-calendar"></i>
+            새 클래스 만들기
+          </a>
+        </li>
       </ul>
       <% end %>
     </li>
@@ -111,8 +121,8 @@
 <nav>
   <h5 class="sidebar-header">임시로 사진올리기</h5>
   <ul class="nav nav-pills nav-stacked">
-    <% unless @classes.nil? %>
-      <% @classes.each do |c| %>
+    <% unless Klass.all.nil? %>
+      <% Klass.all.each do |c| %>
         <li><a href="/picture/new?klass_id=<%=c.id%>"><%=c.title%>에 업로드</a></li>
       <% end %>
     <% end %>

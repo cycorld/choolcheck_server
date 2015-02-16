@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   
   private
   def load_classes
-    @classes = Klass.all
+    @classes = current_user.klasses
+    @classes_created_by_me = current_user.created_klasses
   end
 
   protected

@@ -19,6 +19,8 @@ class DashboardController < ApplicationController
     c.description = params[:class_desc]
     c.admin = [current_user.id]
     if c.save
+      current_user.own_klasses << c.id
+      current_user.save!
       redirect_to "/classbook/#{c.id}"
     else
       # TODO : exections in Model
