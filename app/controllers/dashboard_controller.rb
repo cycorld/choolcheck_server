@@ -53,6 +53,7 @@ class DashboardController < ApplicationController
                          day[4..5].to_i, # 03 Mar
                          day[6..7].to_i  # 03
                         )
+    @albums = @class.albums
   end
 
   # chool

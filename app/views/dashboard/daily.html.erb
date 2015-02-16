@@ -35,7 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <%=@class.users.uniq.each_with_index do |u, index|%>
+                  <% @class.users.uniq.each_with_index do |u, index|%>
                     <tr>
                       <td><%=index+1%></td>
                       <td><%=u.name%></td>
@@ -65,14 +65,21 @@
 
 
 <% content_for :javascript do %>
-       <!--Load these page level functions-->
-        <script>
-        $(document).ready(function() {
-             $('#example').dataTable();
-        });
-        </script>
+<!--Load these page level functions-->
+<script>
+  $(document).ready(function() {
+    $('#example').dataTable();
+  });
+</script>
 <% end %>
 
+<% @albums.each_with_index do |a, index| %>
+  <h1><%=index+1%> / <%=@albums.count%></h1>
+  <% a.pictures.each do |p|%>
+    <h2><%=p.created_at%></h2>
+    <img src="<%=p.picture_url%>">
+  <% end %>
+<% end %>
 
 
 <!-- 슬라이더 부분 -->
@@ -116,13 +123,3 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
-
-
-
-
-
-
-
