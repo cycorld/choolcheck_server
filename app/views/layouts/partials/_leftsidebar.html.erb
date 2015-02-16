@@ -4,13 +4,13 @@
     <i class="on border-dark animated bounceIn"></i>
   </div>
   <div class="profile-body dropdown">
-    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4><b>홍길동</b> 교수 <span class="caret"></span></h4></a>
+    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4><b><%=current_user.name%></b> <span class="caret"></span></h4></a>
     <small class="title">Checker</small>
     <ul class="dropdown-menu animated fadeInRight" role="menu">
       <li class="profile-progress">
         <h5>
           <span>80%</span>
-          <small>Profile complete</small>
+          <small>Check complete</small>
         </h5>
         <div class="progress progress-xs">
           <div class="progress-bar progress-bar-primary" style="width: 80%">
@@ -35,7 +35,7 @@
       </li>
       <li class="divider"></li>
       <li>
-        <a href="javascript:void(0);">
+        <a href="#" class="sign_out_btn">
           <span class="icon"><i class="fa fa-sign-out"></i>
         </span>Logout</a>
       </li>

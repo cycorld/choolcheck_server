@@ -29,7 +29,7 @@
         <span class="avatar">
           <img src="<%= image_path('profile.jpg') %>" class="img-circle" alt="">
         </span>
-        <span class="text">Mike Adams</span>
+        <span class="text"><%=current_user.name%></span>
         <span class="caret"></span>
       </span>
     </a>
@@ -38,7 +38,7 @@
         <span class="arrow top"></span>
         <h5>
           <span>80%</span>
-          <small class="text-muted">Profile complete</small>
+          <small class="text-muted">Check complete</small>
         </h5>
         <div class="progress progress-xs">
           <div class="progress-bar progress-bar" style="width: 80%">
@@ -63,7 +63,7 @@
       </li>
       <li class="divider"></li>
       <li>
-        <a href="#" id="sign_out_btn">
+        <a href="#" class="sign_out_btn">
           <span class="icon"><i class="fa fa-sign-out"></i>
         </span>Logout</a>
       </li>
@@ -77,7 +77,7 @@
 </ul>
 <% content_for :javascript_for_header do %>
   <script>
-  $("#sign_out_btn").click(function() {
+  $(".sign_out_btn").click(function() {
     $.ajax({
         url: '/users/sign_out',
         type: 'DELETE',
