@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # TEMP upload pictures
   get 'picture/new'
   post 'picture/create'
+  post 'api/signup' => 'picture#signup'
+  post 'api/upload' => 'picture#upload'
+  get 'api/list' => 'picture#call_myclass'
 
   # sample
   get 'dashboard/index'
