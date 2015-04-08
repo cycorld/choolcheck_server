@@ -34,8 +34,8 @@ class PictureController < ApplicationController
   end
 
   def call_myclass
-    user = User.where(email: params[:email]).take
-    unless user.valid_password? params[:password]
+    user = User.where(email: params[:email], token: params[:token]).take
+    if user.nil?
       render json: {code: 0, result: "Error"}
     else
       classes = Array.new
@@ -49,8 +49,8 @@ class PictureController < ApplicationController
   end
 
   def upload
-    user = User.where(email: params[:email]).take
-    unless user.valid_password? params[:password]
+    user = User.where(email: params[:email], token: params[:token]).take
+    if user.nil?
       render json: {code: 0, result: "Error"}
     else
       # just one shot!!!!!

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post 'picture/create'
   post 'api/signup' => 'picture#signup'
   post 'api/upload' => 'picture#upload'
-  get 'api/list' => 'picture#call_myclass'
+  post 'api/list' => 'picture#call_myclass'
 
   # sample
   get 'dashboard/index'
